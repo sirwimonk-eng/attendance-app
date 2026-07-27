@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@500;600;700&family=Sarabun:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+@theme {
+  --font-display: "Noto Serif Thai", "Sarabun", serif;
+  --font-body: "Sarabun", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-ink: #16210f;
+  --color-paper: #eeebe0;
+  --color-paper-dim: #e2ddcc;
+  --color-olive-950: #0f170c;
+  --color-olive-900: #17220f;
+  --color-olive-800: #223018;
+  --color-olive-700: #2e4022;
+  --color-olive-600: #3d532e;
+  --color-olive-400: #6d8459;
+  --color-brass-500: #a9862f;
+  --color-brass-400: #c4a24c;
+  --color-brass-300: #ddc27e;
+  --color-signal-red: #8c3a2f;
+  --color-signal-red-dim: #6e2e26;
+  --color-signal-amber: #b8842f;
+  --color-signal-green: #46663d;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Topographic grid texture used behind the login screen and headers */
+.grid-topo {
+  background-image:
+    linear-gradient(rgba(238, 235, 224, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(238, 235, 224, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@keyframes sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  animation: sweep 3.2s linear infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radar-sweep {
+    animation: none;
+  }
+}
+
+@keyframes ping-slow {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  80%, 100% { transform: scale(1.6); opacity: 0; }
+}
+
+.ping-ring {
+  animation: ping-slow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+::selection {
+  background: var(--color-brass-400);
+  color: var(--color-olive-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass-400);
+  outline-offset: 2px;
+}
