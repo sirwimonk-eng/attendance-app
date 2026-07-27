@@ -1,0 +1,11 @@
+{
+  "name": "Remix: ระบบลงเวลาแถวกำลังพล",
+  "description": "ระบบสารสนเทศการจัดการเวลาปฏิบัติงานและการเข้าแถวของกำลังพล ด้วยการตรวจจับใบหน้าและพิกัด GPS",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
